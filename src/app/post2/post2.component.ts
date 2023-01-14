@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-post2',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./post2.component.scss']
 })
 export class Post2Component {
-
+  title = 'Displaying values with interpolation'
+  number = 45
+  array = [1, 2 , 3]
+  object = {a:1, b: {c:2}}
 }
