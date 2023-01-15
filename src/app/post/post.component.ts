@@ -7,7 +7,7 @@ import {Component} from "@angular/core";
 })
 
 export class PostComponent {
-backgroundToggle = false
+  toggle: any = false
 }
 
 
