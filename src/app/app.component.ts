@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'learn-angular-v2';
   img = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNm7TsOwStdKiqs1M2Xp0FOS7TtBp5fbxlKcfi3NKtM0Q-OmT--WStHTvveDVPRlui8A4&usqp=CAU';
   inputValue = ''
+  input2Value = 'initialValue'
 
   constructor() {
     setTimeout(() => {

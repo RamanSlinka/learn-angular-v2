@@ -9,10 +9,18 @@
 <img [src]='img' alt="logo framework"><span>with binding(this is correct)</span>
 <br>
 <div>
+  <p>one way binding</p>
   <input (keyup.enter)="inputHandler($event)"
          (blur)="onBlur(myInput.value)"
          #myInput
          type="text"/>
   <button (click)="onClick()">Click</button>
   <p>{{inputValue}}</p>
+</div>
+<div>
+  <p>Two way binding</p>
+  <input
+    [(ngModel)]="input2Value"
+    type="text">
+  <p>{{input2Value}}</p>
 </div>
