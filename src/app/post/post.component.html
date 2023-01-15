@@ -1,6 +1,34 @@
-<div class="post">
-  <h2 >
+<button (click)="backgroundToggle = !backgroundToggle"
+        class="btn"
+> Color Toggle
+</button>
+
+<div [ngStyle]="{
+  width: '450px',
+  border: '3px solid black',
+  padding: '1rem',
+  marginBottom: '1rem',
+  color: 'white',
+  backgroundColor: backgroundToggle ? 'gray' : 'green'
+}">
+
+  <h2>
     Post title.
   </h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio hic maiores minus molestias officiis? Aliquam, asperiores aspernatur deleniti doloribus esse est mollitia non quidem repellendus voluptatem! Fuga obcaecati placeat quas?10</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio hic maiores minus molestias officiis? Aliquam,
+    asperiores aspernatur deleniti doloribus esse est mollitia non quidem repellendus voluptatem!
+    Fuga obcaecati placeat quas?</p>
+</div>
+<hr>
+<div [ngClass]="{
+red: backgroundToggle,
+blue: !backgroundToggle
+}">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, possimus.</p>
+</div>
+<hr>
+<div [class.blue]="backgroundToggle"
+     [class.red]="!backgroundToggle"
+>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, possimus.</p>
 </div>
