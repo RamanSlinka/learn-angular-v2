@@ -9,7 +9,7 @@ import {Post} from "../app.component";
 export class PostFormComponent implements OnInit {
   @Output() onAdd: EventEmitter<Post> = new EventEmitter<Post>()
 
-  @ViewChild('titleInput') inputRef: ElementRef
+  @ViewChild('titleInput', {static: false}) inputRef: ElementRef
 
   title = ''
   text = ''
