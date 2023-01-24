@@ -7,6 +7,12 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
 
+  word = 'hello'
+  num = 10
+  arr = [1,2,3]
+  obj = {a:1, b:{c:2}}
+
+
      constructor() {}
 
 }
