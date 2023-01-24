@@ -6,26 +6,74 @@
 
 <h2>Directives: </h2>
 <hr>
-<p>[ngStyle]</p>
-<div [ngStyle]="{
+<p>[*ngIf]</p>
+<div [ngStyle]="{display: 'flex', flexDirection:'row'}">
+  <div *ngIf="backgroundToggle"
+       [ngStyle]="{
 width: '100px',
 height: '100px',
 margin: '10px',
-background: backgroundToggle ? 'red' : 'green'
+background: backgroundToggle ?  'green' : 'red'
 }"></div>
+  <div *ngIf="!backgroundToggle" [ngStyle]="{
+width: '100px',
+height: '100px',
+margin: '10px',
+marginLeft: '110px',
+background: backgroundToggle ?   'green' : 'red'
+}"></div>
+</div>
+
+
 <hr>
-<p>[ngClass](use if you have  many classes)</p>
-<div [ngClass]="{
+<p>[*ngIf else]</p>
+<div [ngStyle]="{display: 'flex', flexDirection:'row'}">
+  <div *ngIf="backgroundToggle; else blue"
+       [ngClass]="{
 pink: !backgroundToggle,
 blue: backgroundToggle
 }"></div>
-<hr>
-<p>[class](use if you have  1 or 2 classes)</p>
-<div [class.blue]="!backgroundToggle"
-     [class.pink]="backgroundToggle"
-></div>
+  <ng-template #blue>
+    <div style="marginLeft: '110px'"
+         [ngClass]="{
+pink: !backgroundToggle,
+blue: backgroundToggle
+}"></div>
+  </ng-template>
+</div>
 
 
 <hr>
+<p>[ngSwitch]</p>
+<div [ngSwitch]="backgroundToggle"
+     [ngStyle]="{display: 'flex', flexDirection:'row'}">
+  <div *ngSwitchCase="true" [class.pink]="backgroundToggle"
+  ></div>
+  <div *ngSwitchCase="false"
+       style="marginLeft: '110px'"
+       [class.blue]="!backgroundToggle"
+  ></div>
+  <div *ngSwitchDefault
+       [class.yellow]="backgroundToggle === 11"
+  ></div>
+</div>
+<button (click)=" backgroundToggle = 11" class="btn">Toggle for default</button>
+<hr>
+<p>[ngFor]</p>
+<div
+  [ngStyle]="{display: 'flex', flexDirection:'row'}">
+  <div *ngFor="let num of arr"
+       [class.pink]="backgroundToggle"
+  ><h2>{{num}}</h2></div>
+</div>
+<br>
+<div *ngFor="let post of posts">
+  <h2>{{post.title}}</h2>
+  <h3>{{post.author}}</h3>
+  <small *ngFor="let comment of post.comments">
+    {{comment.name}}: {{ comment.text}}
+    <br>
+  </small>
+</div>
 
 
