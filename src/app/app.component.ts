@@ -1,39 +1,12 @@
-import {Component, ViewEncapsulation} from '@angular/core';
-export interface  Post {
-  title: string
-  text: string
-  id?: number
-}
+import {Component} from '@angular/core';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
- posts: Post [] = [
-   {
-     id: 1,
-     title: 'Learn JS',
-     text: 'Lorem ipsum dolor sit a rt.'
-   },
-   {
-     id: 2,
-     title: 'Learn Angular',
-     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, reprehenderit.'
-   },
- ]
 
-  updatePost(post: Post) {
-   this.posts.unshift(post)
-  }
-
-  removePost(id: number) {
-    this.posts = this.posts.filter(p => p.id !== id)
-  }
-
-  constructor() {}
-
-
+     constructor() {}
 
 }
