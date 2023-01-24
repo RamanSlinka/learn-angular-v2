@@ -9,20 +9,21 @@
 <h3>Event binding(one way binding)</h3>
 <button (click)="onClick()" class="btn">Click me!</button>
 
-<input  (input)="inputHandler($event)" [value]="inputValue" type="text"    style="width: 200px" />
+<input  (input)="inputHandler($event)" type="text"    style="width: 200px" />
 <p>{{inputValue}}</p>
 <br>
 <input  (keyup.enter)="inputHandler2($event)"
         (blur)="onBlur(myInput.value)"
-        [value]="inputValue2"
         #myInput
         type="text"    style="width: 200px" />
 <p>{{inputValue2}}</p>
-
-
-<app-post></app-post>
-<app-post2></app-post2>
-<hr><app-post3></app-post3>
 <hr>
+<h3>Two way binding: </h3>
+<input [(ngModel)]="twoWay" type="text">
+<p>{{twoWay}}</p>
+<!--<app-post></app-post>-->
+<!--<app-post2></app-post2>-->
+<!--<hr><app-post3></app-post3>-->
+<!--<hr>-->
 
 

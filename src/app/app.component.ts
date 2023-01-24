@@ -9,6 +9,7 @@ export class AppComponent {
   img = 'https://cdn.freebiesupply.com/logos/thumbs/2x/react-1-logo.png'
   inputValue = 'initial value'
   inputValue2 = 'initial value'
+  twoWay = 'twoWay'
 
   constructor() {
     setTimeout(() => {
@@ -32,4 +33,6 @@ export class AppComponent {
   onBlur(str: string) {
     this.inputValue2 = str
   }
+
+
 }
