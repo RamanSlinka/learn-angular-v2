@@ -6,13 +6,30 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  img = 'https://cdn.freebiesupply.com/logos/thumbs/2x/react-1-logo.png'
+  inputValue = 'initial value'
+  inputValue2 = 'initial value'
 
-  word = 'hello'
-  num = 10
-  arr = [1,2,3]
-  obj = {a:1, b:{c:2}}
+  constructor() {
+    setTimeout(() => {
+      this.img = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1024px-Angular_full_color_logo.svg.png'
+    }, 5000)
 
+  }
 
-     constructor() {}
+  onClick() {
+    console.log('Click')
+  }
 
+  inputHandler(event: Event) {
+    this.inputValue = (<HTMLInputElement>event.target).value
+  }
+
+  inputHandler2(event: Event) {
+    this.inputValue2 = (<HTMLInputElement>event.target).value
+  }
+
+  onBlur(str: string) {
+    this.inputValue2 = str
+  }
 }
