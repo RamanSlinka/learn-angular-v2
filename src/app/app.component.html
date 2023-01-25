@@ -1,7 +1,21 @@
 <div class="container">
+  <h1>Angular components</h1>
+  <h2>Subtitle</h2>
 
-  <h1>Angular directives</h1>
-<p appStyle>Lorem ipsum dolor sit amet, consectetur adipis ratione voluptatem! A accusamus arcl velit veritatis, voluptate.</p>
+  <app-post-form
+    (sendPost)=updatePosts($event)
 
+  ></app-post-form>
+  <hr>
+  <app-post
+    (removePost) = deletePost($event)
+    *ngFor='let post of posts'
+    [post]=post
+  >
+    <div #info>
+      <small *ngIf="post.text.length > 10; else short ">Post is long</small>
+      <ng-template #short> Post is short</ng-template>
+    </div>
 
+  </app-post>
 </div>
