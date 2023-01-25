@@ -1,10 +1,13 @@
 <div class="container">
   <h1>Angular components</h1>
 
-  <app-post-form (sendPost)=updatePosts($event)
+  <app-post-form
+    (sendPost)=updatePosts($event)
+
   ></app-post-form>
   <hr>
   <app-post
+    (removePost) = deletePost($event)
     *ngFor='let post of posts'
     [post]=post
   >
