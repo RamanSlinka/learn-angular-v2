@@ -37,6 +37,8 @@ img {
 }
 
 .btn {
+  max-height: 40px;
+
   display: inline-block;
   background: #333333;
   color: #fff;
@@ -62,6 +64,8 @@ img {
   padding: 1rem;
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 input,

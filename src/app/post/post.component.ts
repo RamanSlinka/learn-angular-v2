@@ -1,4 +1,4 @@
-import {Component, Input} from "@angular/core";
+import {Component, ContentChild, ElementRef, Input, OnInit} from "@angular/core";
 import {Post} from "../app.component";
 
 
@@ -7,8 +7,14 @@ import {Post} from "../app.component";
   templateUrl: 'post.component.html',
 })
 
-export class PostComponent {
+export class PostComponent implements OnInit{
 
-@Input() post:Post
+  @Input() post: Post
+  @ContentChild('info', {static: true}) nameMethod: ElementRef
+
+  ngOnInit(){
+    console.log(this.nameMethod.nativeElement)
+
+  }
 
 }

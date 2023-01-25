@@ -1,8 +1,7 @@
 import {Component} from '@angular/core';
 
 
-
-export interface  Post {
+export interface Post {
   title: string
   text: string
   id?: number
@@ -29,9 +28,11 @@ export class AppComponent {
     },
   ]
 
-  constructor() { }
+  constructor() {
+  }
 
 
-
-
+  updatePosts(post: Post) {
+    this.posts.unshift(post)
+  }
 }
