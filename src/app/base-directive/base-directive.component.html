@@ -1,0 +1,80 @@
+<h1 class="container">This is Angular app</h1>
+<button
+  (click)="backgroundToggle = !backgroundToggle"
+  class="btn">Toggle
+</button>
+
+<h2>Directives: </h2>
+<hr>
+<p>[*ngIf]</p>
+<div [ngStyle]="{display: 'flex', flexDirection:'row'}">
+  <div *ngIf="backgroundToggle"
+       [ngStyle]="{
+width: '100px',
+height: '100px',
+margin: '10px',
+background: backgroundToggle ?  'green' : 'red'
+}"></div>
+  <div *ngIf="!backgroundToggle" [ngStyle]="{
+width: '100px',
+height: '100px',
+margin: '10px',
+marginLeft: '110px',
+background: backgroundToggle ?   'green' : 'red'
+}"></div>
+</div>
+
+
+<hr>
+<p>[*ngIf else]</p>
+<div [ngStyle]="{display: 'flex', flexDirection:'row'}">
+  <div *ngIf="backgroundToggle; else blue"
+       [ngClass]="{
+pink: !backgroundToggle,
+blue: backgroundToggle
+}"></div>
+  <ng-template #blue>
+    <div style="marginLeft: '110px'"
+         [ngClass]="{
+pink: !backgroundToggle,
+blue: backgroundToggle
+}"></div>
+  </ng-template>
+</div>
+
+
+<hr>
+<p>[ngSwitch]</p>
+<div [ngSwitch]="backgroundToggle"
+     [ngStyle]="{display: 'flex', flexDirection:'row'}">
+  <div *ngSwitchCase="true" [class.pink]="backgroundToggle"
+  ></div>
+  <div *ngSwitchCase="false"
+       style="marginLeft: '110px'"
+       [class.blue]="!backgroundToggle"
+  ></div>
+  <div *ngSwitchDefault
+       [class.yellow]="backgroundToggle === 11"
+  ></div>
+</div>
+<button (click)=" backgroundToggle = 11" class="btn">Toggle for default</button>
+<hr>
+<p>[ngFor]</p>
+<div
+  [ngStyle]="{display: 'flex', flexDirection:'row'}">
+  <div *ngFor="let num of arr"
+       [class.pink]="backgroundToggle || !backgroundToggle"
+  ><h2>{{num}}</h2></div>
+</div>
+<br>
+<div *ngFor="let post of posts">
+  <h2>{{post.title}}</h2>
+  <h3>{{post.author}}</h3>
+  <small *ngFor="let comment of post.comments">
+    {{comment.name}}: {{ comment.text}}
+    <br>
+  </small>
+</div>
+
+
+
