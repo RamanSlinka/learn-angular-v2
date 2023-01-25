@@ -1,4 +1,5 @@
-import {Component} from "@angular/core";
+import {Component, Input} from "@angular/core";
+import {Post} from "../app.component";
 
 
 @Component({
@@ -8,6 +9,6 @@ import {Component} from "@angular/core";
 
 export class PostComponent {
 
-
+@Input() post:Post
 
 }
