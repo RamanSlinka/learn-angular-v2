@@ -9,6 +9,7 @@ import { BaseDirectiveComponent } from './base-directive/base-directive.componen
 import { PostFormComponent } from './post-main/post-form/post-form.component';
 import { PostMainComponent } from './post-main/post-main.component';
 import { StyleDirective } from './directives/style.directive';
+import { IfNotDirective } from './directives/if-not.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { StyleDirective } from './directives/style.directive';
     BaseDirectiveComponent,
     PostFormComponent,
     PostMainComponent,
-    StyleDirective
+    StyleDirective,
+    IfNotDirective
 
   ],
   imports: [
