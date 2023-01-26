@@ -1,0 +1,31 @@
+
+<h2>Angular App</h2>
+
+<p [appStyle]="'gray'" [dStyles] ="{
+border: '1px solid red', fontWeight: 'bold', borderRadius: '5px'
+}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, modi.</p>
+
+<p [appStyle]="'blue'" [dStyles] ="{
+border: '2px solid green', fontWeight: 'italic', borderRadius: '15px'
+}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, modi.</p>
+
+
+<div class="container">
+  <button (click)="isVisible = !isVisible" class="btn" >Toggle</button>
+  <br>
+  <h3>directive *ngIf :</h3>
+  <div
+    *ngIf="isVisible"
+    class="wrap">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, odit?</p>
+  </div>
+  <br>
+  <h3>custom directive *appIfNot: </h3>
+
+  <div
+    *appIfNot="!isVisible"
+    class="wrap">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, odit?</p>
+  </div>
+</div>
+
