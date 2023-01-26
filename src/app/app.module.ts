@@ -8,13 +8,15 @@ import {PostComponent} from "./post-main/post/post.component";
 import { BaseDirectiveComponent } from './base-directive/base-directive.component';
 import { PostFormComponent } from './post-main/post-form/post-form.component';
 import { PostMainComponent } from './post-main/post-main.component';
+import { StyleDirective } from './directives/style.directive';
 @NgModule({
   declarations: [
     AppComponent,
     PostComponent,
     BaseDirectiveComponent,
     PostFormComponent,
-    PostMainComponent
+    PostMainComponent,
+    StyleDirective
 
   ],
   imports: [
