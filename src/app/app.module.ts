@@ -11,6 +11,10 @@ import { PostMainComponent } from './post-main/post-main.component';
 import { StyleDirective } from './directives/style.directive';
 import { IfNotDirective } from './directives/if-not.directive';
 import { DetailDirectiveComponent } from './detail-directive/detail-directive.component';
+import { DetailPipesComponent } from './detail-pipes/detail-pipes.component';
+import { MultByPipe } from './pipes/mult-by.pipe';
+import { ExMarksPipe } from './pipes/ex-marks.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +24,11 @@ import { DetailDirectiveComponent } from './detail-directive/detail-directive.co
     PostMainComponent,
     StyleDirective,
     IfNotDirective,
-    DetailDirectiveComponent
+    DetailDirectiveComponent,
+    DetailPipesComponent,
+    MultByPipe,
+    ExMarksPipe,
+    FilterPipe
 
   ],
   imports: [
