@@ -16,6 +16,7 @@ import { MultByPipe } from './pipes/mult-by.pipe';
 import { ExMarksPipe } from './pipes/ex-marks.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
+import { FormsReactiveComponent } from './forms-reactive/forms-reactive.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.compo
     MultByPipe,
     ExMarksPipe,
     FilterPipe,
-    LifecycleHooksComponent
+    LifecycleHooksComponent,
+    FormsReactiveComponent
 
   ],
   imports: [
