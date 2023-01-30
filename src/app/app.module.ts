@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {PostComponent} from "./post-main/post/post.component";
 import { BaseDirectiveComponent } from './base-directive/base-directive.component';
 import { PostFormComponent } from './post-main/post-form/post-form.component';
@@ -38,7 +38,8 @@ import { FormsReactiveComponent } from './forms-reactive/forms-reactive.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
