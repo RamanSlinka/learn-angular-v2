@@ -15,6 +15,7 @@ import { DetailPipesComponent } from './detail-pipes/detail-pipes.component';
 import { MultByPipe } from './pipes/mult-by.pipe';
 import { ExMarksPipe } from './pipes/ex-marks.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     DetailPipesComponent,
     MultByPipe,
     ExMarksPipe,
-    FilterPipe
+    FilterPipe,
+    LifecycleHooksComponent
 
   ],
   imports: [
