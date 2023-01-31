@@ -1,16 +1,23 @@
 <div class="container">
-  <form class="card">
+  <form
+    [formGroup]="form"
+    (ngSubmit)="submit()"
+    class="card">
     <h1>Angular Forms</h1>
 
     <div class="form-control">
       <label>Email</label>
-      <input type="text" placeholder="Email">
+      <input
+        formControlName="email"
+        type="text" placeholder="Email">
       <div class="validation"></div>
     </div>
 
     <div class="form-control">
       <label>Password</label>
-      <input type="password" placeholder="Password">
+      <input
+        formControlName="password"
+        type="password" placeholder="Password">
       <div class="validation"></div>
     </div>
 
@@ -31,19 +38,19 @@
         <input type="text">
       </div>
 
-      <button class="btn">Choice the capital</button>
+      <button class="btn" type="button">Choice the capital</button>
     </div>
 
     <div class="card">
       <h2>Your skill</h2>
-      <button class="btn">Add skill</button>
+      <button class="btn" type="button">Add skill</button>
       <div class="form-control">
         <label></label>
         <input type="text">
       </div>
     </div>
 
-    <button class="btn">Send</button>
+    <button [disabled]="form.invalid" class="btn" type="submit">Send</button>
 
   </form>
 </div>
