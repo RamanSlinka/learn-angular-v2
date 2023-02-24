@@ -1,2 +1,19 @@
+<div class="container">
 
-<app-forms-reactive></app-forms-reactive>
+  <h1>Angular directives</h1>
+<p appStyle="red" [dStyle]="{border: '1px solid green', borderRadius: '5px'}">
+    Lorem ipsum dolor sit amet, consectetur adipis ratione voluptatem! A accusamus arcl velit veritatis, voluptate.</p>
+  <hr>
+  <p appStyle="brown" [dStyle]="{border: '2px solid red', fontWeight:'bold', borderRadius: '10px'}">
+  Lorem ipsum dolor sit amet, consectetur adipis ratione voluptatem! A accusamus arcl velit veritatis, voluptate.</p>
+  <hr>
+
+  <button (click)="isVisible = !isVisible"
+  class="btn"  >Toggle</button>
+
+  <div *appIfNot="!isVisible"
+    class="wrap">
+   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ipsa, nostrum obcaecati reiciendis rem vero.</p>
+  </div>
+
+</div>

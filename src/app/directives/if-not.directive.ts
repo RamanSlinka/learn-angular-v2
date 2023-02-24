@@ -5,18 +5,21 @@ import {Directive, Input, TemplateRef, ViewContainerRef} from '@angular/core';
 })
 export class IfNotDirective {
 
-  @Input() set appIfNot(condition: boolean) {
-    if(!condition) {
-      // view elements
+
+  @Input('appIfNot') set ifNot(condition: boolean) {
+    if (!condition) {
+      //view elements
       this.viewContainer.createEmbeddedView(this.templateRef)
-          } else {
+
+    } else {
       // hide elements
       this.viewContainer.clear()
+
     }
   }
 
-
   constructor(private templateRef: TemplateRef<any>,
-              private viewContainer: ViewContainerRef  ) { }
+              private viewContainer: ViewContainerRef) {
+  }
 
 }
