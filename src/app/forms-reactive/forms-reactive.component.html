@@ -1,26 +1,54 @@
 <div class="container">
-  <form class="card">
+  <form
+    [formGroup]="form"
+    (ngSubmit)="submit()"
+    class="card">
     <h1>Angular Forms</h1>
 
     <div class="form-control">
       <label>Email</label>
-      <input type="text" placeholder="Email">
-      <div class="validation"></div>
+      <input
+        formControlName="email"
+        type="text" placeholder="Email">
+      <div
+        *ngIf="form.get('email')?.invalid && form.get('email')?.touched "
+        class="validation">
+        <small *ngIf="form.get('email')?.errors?.['required']">
+          The field must not be empty!
+        </small>
+        <small *ngIf="form.get('email')?.errors?.['email']">
+          Enter email address correctly!
+        </small>
+      </div>
     </div>
 
     <div class="form-control">
       <label>Password</label>
-      <input type="password" placeholder="Password">
-      <div class="validation"></div>
+      <input
+        formControlName="password"
+        type="password" placeholder="Password">
+      <div
+        *ngIf="form.get('password')?.invalid && form.get('password')?.touched "
+        class="validation">
+        <small *ngIf="form.get('password')?.errors?.['required']">
+          The field must not be empty!
+        </small>
+        <small *ngIf="form.get('password')?.errors?.['minlength']">
+          Password length must be at least
+          {{form.get('password')?.errors?.['minlength'].requiredLength}} symbols.
+          Current symbols
+          {{form.get('password')?.errors?.['minlength'].actualLength}}
+        </small>
+      </div>
     </div>
 
-    <div class="card">
+    <div class="card" formGroupName="address">
       <h2>Address</h2>
 
       <div class="form-control">
         <label>Country</label>
 
-        <select>
+        <select formControlName="country">
           <option value="pl">Poland</option>
           <option value="ua">Ukraine</option>
           <option value="by">Belarus</option>
@@ -28,22 +56,34 @@
       </div>
 
       <div class="form-control">
-        <input type="text">
+        <input formControlName="city" type="text" placeholder="city">
       </div>
 
-      <button class="btn">Choice the capital</button>
+      <button (click)="setCapital()" class="btn" type="button">Choice the capital</button>
     </div>
 
-    <div class="card">
+    <div
+      formGroupName="skills"
+      class="card">
       <h2>Your skill</h2>
-      <button class="btn">Add skill</button>
-      <div class="form-control">
-        <label></label>
-        <input type="text">
+      <button
+        (click)="addSkill()"
+        class="btn" type="button">Add skill
+      </button>
+
+<!--  IMPORTANT :   Pay attention to *ngFor and   receiving
+controls (follow to fun getControls() and look  at the implementation) -->
+      <div
+        *ngFor="let control of getControls(); let i = index"
+        class="form-control">
+        <label>Skill {{i + 1}}</label>
+        <input
+          [formControlName]='i'
+          type="text">
       </div>
     </div>
 
-    <button class="btn">Send</button>
+    <button [disabled]="form.invalid" class="btn" type="submit">Send</button>
 
   </form>
 </div>

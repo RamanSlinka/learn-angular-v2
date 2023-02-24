@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import {FormsModule} from "@angular/forms";
+import {AppComponent} from './app.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {PostComponent} from "./post-main/post/post.component";
 import { BaseDirectiveComponent } from './base-directive/base-directive.component';
 import { PostFormComponent } from './post-main/post-form/post-form.component';
@@ -16,7 +16,7 @@ import { MultByPipe } from './pipes/mult-by.pipe';
 import { ExMarksPipe } from './pipes/ex-marks.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
-import { FormsReactiveComponent } from './forms-reactive/forms-reactive.component';
+import {FormsReactiveComponent} from "./forms-reactive/forms-reactive.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +38,8 @@ import { FormsReactiveComponent } from './forms-reactive/forms-reactive.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
